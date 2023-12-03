@@ -23,6 +23,19 @@ void count_of_nodes(struct node *head){
 
 }
 
+//Print data function
+void print_data(struct node *head){
+    if(head==NULL){
+        printf("The Linkedlist is Empty \n");
+    }
+    struct node *ptr;
+    ptr=head;
+    while(ptr!=NULL){
+        printf("The data is %d \n",ptr->data);
+        ptr=ptr->link;
+    }
+}
+
 int main(){
     struct node *head=NULL;
     head=(struct node *)malloc(sizeof(struct node));
@@ -53,6 +66,7 @@ int main(){
     printf("%d \n",current->data);
     
     count_of_nodes(head);
+    print_data(head);
     return 0;
 
 }
