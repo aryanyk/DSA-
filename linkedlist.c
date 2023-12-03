@@ -7,7 +7,7 @@ struct node{
 };
 
 //Traversing Code[means visiting every single node in linked list]
-
+//Time complexity =o(n)
 void count_of_nodes(struct node *head){
     int count=0;
     if(head==NULL){
@@ -24,6 +24,7 @@ void count_of_nodes(struct node *head){
 }
 
 //Print data function
+//Time complexity =o(n)
 void print_data(struct node *head){
     if(head==NULL){
         printf("The Linkedlist is Empty \n");
@@ -34,6 +35,22 @@ void print_data(struct node *head){
         printf("The data is %d \n",ptr->data);
         ptr=ptr->link;
     }
+}
+
+//adding node at the end
+
+void node_at_end(struct node *head,int data){
+    struct node *ptr,*temp;
+    ptr=head;
+    temp=(struct node *)malloc(sizeof(struct node));
+
+    temp->data=data;
+    temp->link=NULL;
+    while(ptr->link!=NULL){
+        ptr=ptr->link;
+    }
+    ptr->link=temp;
+
 }
 
 int main(){
@@ -67,6 +84,9 @@ int main(){
     
     count_of_nodes(head);
     print_data(head);
+    node_at_end(head,23);
+    print_data(head);
+    count_of_nodes(head);
     return 0;
 
 }
