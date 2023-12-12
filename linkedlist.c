@@ -46,7 +46,7 @@ void node_at_end(struct node *head,int data){
 
     temp->data=data;
     temp->link=NULL;
-    while(ptr->link!=NULL){
+    while(ptr->link!=NULL){ //Here time complexity is O(n)
         ptr=ptr->link;
     }
     ptr->link=temp;
